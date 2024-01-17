@@ -40,5 +40,14 @@ python main.py --llm YOUR_LLM_NAME --dataset mimic_iii --data_path YOUR_DATA_PAT
 For **eICU** dataset, just change the option of dataset to ``--dataset eicu``.
 
 ### Citation
-
-Coming soon!
+If you find this repository useful, please consider citing:
+```bibtex
+@misc{shi2024ehragent,
+      title={EHRAgent: Code Empowers Large Language Models for Complex Tabular Reasoning on Electronic Health Records}, 
+      author={Wenqi Shi and Ran Xu and Yuchen Zhuang and Yue Yu and Jieyu Zhang and Hang Wu and Yuanda Zhu and Joyce Ho and Carl Yang and May D. Wang},
+      year={2024},
+      eprint={2401.07128},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
