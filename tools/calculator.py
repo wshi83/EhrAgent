@@ -25,7 +25,7 @@ def calculator(query: str):
 
 def WolframAlphaCalculator(input_query: str):
     try:
-        wolfram_alpha_appid = "U9RQH5-2PXVQQP2RH" #"8725AK-A63G32JU4T"
+        wolfram_alpha_appid = "<YOUR_WOLFRAMALPHA_APP_ID>"
         wolfram_client = wolframalpha.Client(wolfram_alpha_appid)
         res = wolfram_client.query(input_query)
         assumption = next(res.pods).text

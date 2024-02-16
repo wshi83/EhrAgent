@@ -6,23 +6,23 @@ import sqlite3
 import sys
 import Levenshtein
 def db_loader(target_ehr):
-    ehr_dict = {"admissions":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/ADMISSIONS.csv",
-                "chartevents":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/CHARTEVENTS.csv",
-                "cost":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/COST.csv",
-                "d_icd_diagnoses":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/D_ICD_DIAGNOSES.csv",
-                "d_icd_procedures":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/D_ICD_PROCEDURES.csv",
-                "d_items":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/D_ITEMS.csv",
-                "d_labitems":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/D_LABITEMS.csv",
-                "diagnoses_icd":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/DIAGNOSES_ICD.csv",
-                "icustays":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/ICUSTAYS.csv",
-                "inputevents_cv":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/INPUTEVENTS_CV.csv",
-                "labevents":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/LABEVENTS.csv",
-                "microbiologyevents":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/MICROBIOLOGYEVENTS.csv",
-                "outputevents":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/OUTPUTEVENTS.csv",
-                "patients":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/PATIENTS.csv",
-                "prescriptions":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/PRESCRIPTIONS.csv",
-                "procedures_icd":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/PROCEDURES_ICD.csv",
-                "transfers":"/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/TRANSFERS.csv",
+    ehr_dict = {"admissions":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/ADMISSIONS.csv",
+                "chartevents":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/CHARTEVENTS.csv",
+                "cost":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/COST.csv",
+                "d_icd_diagnoses":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/D_ICD_DIAGNOSES.csv",
+                "d_icd_procedures":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/D_ICD_PROCEDURES.csv",
+                "d_items":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/D_ITEMS.csv",
+                "d_labitems":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/D_LABITEMS.csv",
+                "diagnoses_icd":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/DIAGNOSES_ICD.csv",
+                "icustays":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/ICUSTAYS.csv",
+                "inputevents_cv":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/INPUTEVENTS_CV.csv",
+                "labevents":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/LABEVENTS.csv",
+                "microbiologyevents":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/MICROBIOLOGYEVENTS.csv",
+                "outputevents":"<YOUR_DATASET_PATH>/mimic_iii/OUTPUTEVENTS.csv",
+                "patients":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/PATIENTS.csv",
+                "prescriptions":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/PRESCRIPTIONS.csv",
+                "procedures_icd":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/PROCEDURES_ICD.csv",
+                "transfers":"<YOUR_DATASET_PATH>/ehrsql/mimic_iii/TRANSFERS.csv",
                 }
     data = pd.read_csv(ehr_dict[target_ehr])
     # data = data.astype(str)
@@ -190,14 +190,14 @@ def get_value(data, argument):
         raise Exception("The column name {} is incorrect. Please check the column name and make necessary changes. The columns in this table include {}.".format(column, column_values))
 
 def sql_interpreter(command):
-    con = sqlite3.connect("/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/mimic_iii.db")
+    con = sqlite3.connect("<YOUR_DATASET_PATH>/ehrsql/mimic_iii/mimic_iii.db")
     cur = con.cursor()
     results = cur.execute(command).fetchall()
     return results
 
 def date_calculator(argument):
     try:
-        con = sqlite3.connect("/localscratch/yzhuang43/ra-llm/MedTool/ehrsql/mimic_iii/mimic_iii.db")
+        con = sqlite3.connect("<YOUR_DATASET_PATH>/ehrsql/mimic_iii/mimic_iii.db")
         cur = con.cursor()
         command = "select datetime(current_time, '{}')".format(argument)
         results = cur.execute(command).fetchall()[0][0]
