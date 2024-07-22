@@ -42,12 +42,10 @@ For **eICU** dataset, just change the option of dataset to ``--dataset eicu``.
 ### Citation
 If you find this repository useful, please consider citing:
 ```bibtex
-@misc{shi2024ehragent,
-      title={EHRAgent: Code Empowers Large Language Models for Complex Tabular Reasoning on Electronic Health Records}, 
-      author={Wenqi Shi and Ran Xu and Yuchen Zhuang and Yue Yu and Jieyu Zhang and Hang Wu and Yuanda Zhu and Joyce Ho and Carl Yang and May D. Wang},
-      year={2024},
-      eprint={2401.07128},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{shi2024ehragent,
+  title={Ehragent: Code empowers large language models for complex tabular reasoning on electronic health records},
+  author={Shi, Wenqi and Xu, Ran and Zhuang, Yuchen and Yu, Yue and Zhang, Jieyu and Wu, Hang and Zhu, Yuanda and Ho, Joyce and Yang, Carl and Wang, May D},
+  journal={arXiv preprint arXiv:2401.07128},
+  year={2024}
 }
 ```
