@@ -45,7 +45,7 @@ If you find this repository useful, please consider citing:
 @article{shi2024ehragent,
   title={Ehragent: Code empowers large language models for complex tabular reasoning on electronic health records},
   author={Shi, Wenqi and Xu, Ran and Zhuang, Yuchen and Yu, Yue and Zhang, Jieyu and Wu, Hang and Zhu, Yuanda and Ho, Joyce and Yang, Carl and Wang, May D},
-  journal={arXiv preprint arXiv:2401.07128},
+  journal={EMNLP},
   year={2024}
 }
 ```
