@@ -42,10 +42,29 @@ For **eICU** dataset, just change the option of dataset to ``--dataset eicu``.
 ### Citation
 If you find this repository useful, please consider citing:
 ```bibtex
-@article{shi2024ehragent,
-  title={Ehragent: Code empowers large language models for complex tabular reasoning on electronic health records},
-  author={Shi, Wenqi and Xu, Ran and Zhuang, Yuchen and Yu, Yue and Zhang, Jieyu and Wu, Hang and Zhu, Yuanda and Ho, Joyce and Yang, Carl and Wang, May D},
-  journal={EMNLP},
-  year={2024}
+@inproceedings{shi-etal-2024-ehragent,
+    title = "{EHRA}gent: Code Empowers Large Language Models for Few-shot Complex Tabular Reasoning on Electronic Health Records",
+    author = "Shi, Wenqi  and
+      Xu, Ran  and
+      Zhuang, Yuchen  and
+      Yu, Yue  and
+      Zhang, Jieyu  and
+      Wu, Hang  and
+      Zhu, Yuanda  and
+      Ho, Joyce C.  and
+      Yang, Carl  and
+      Wang, May Dongmei",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.1245",
+    doi = "10.18653/v1/2024.emnlp-main.1245",
+    pages = "22315--22339",
+    abstract = "Clinicians often rely on data engineers to retrieve complex patient information from electronic health record (EHR) systems, a process that is both inefficient and time-consuming. We propose EHRAgent, a large language model (LLM) agent empowered with accumulative domain knowledge and robust coding capability. EHRAgent enables autonomous code generation and execution to facilitate clinicians in directly interacting with EHRs using natural language. Specifically, we formulate a multi-tabular reasoning task based on EHRs as a tool-use planning process, efficiently decomposing a complex task into a sequence of manageable actions with external toolsets. We first inject relevant medical information to enable EHRAgent to effectively reason about the given query, identifying and extracting the required records from the appropriate tables. By integrating interactive coding and execution feedback, EHRAgent then effectively learns from error messages and iteratively improves its originally generated code. Experiments on three real-world EHR datasets show that EHRAgent outperforms the strongest baseline by up to 29.6{\%} in success rate, verifying its strong capacity to tackle complex clinical tasks with minimal demonstrations.",
 }
 ```
